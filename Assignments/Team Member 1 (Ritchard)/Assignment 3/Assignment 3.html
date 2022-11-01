@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.watsonAssistantChatOptions = {
+          integrationID: "6cf0c1b6-0abe-4d7b-ba94-c627ba31caf8", 
+          region: "au-syd",
+          serviceInstanceID: "a2a31f22-b08e-486f-8ddc-9783ed014b2d",
+          onLoad: function(instance) { instance.render(); }
+        };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+          document.head.appendChild(t);
+        });
+      </script>
+</head>
+<body style="background-color:rgb(73, 209, 251);">
+  <div class="hospital" style="padding: 28px;text-align: center;font-family: sans-serif;">
+    <h1> <u>THE JOHNS HOPKINS HOSPITAL</u></h1>
+    <img src="https://celestial.s3.jp-tok.cloud-object-storage.appdomain.cloud/hospital1.jpeg" style="width: 868px; height: 350px;">
+  </div>
+    
+  <br>			
+  <div style="text-align:center;">
+    <h1 style="padding: 10px;"> INFRASTRUCTURE</h2>
+      <br>
+      <div class="gallery">
+        <img src="https://celestial.s3.jp-tok.cloud-object-storage.appdomain.cloud/hospital2.jpg" style="width: 800px; height: 350px;">
+      </div>
+      <div class="gallery">
+        <img src="https://celestial.s3.jp-tok.cloud-object-storage.appdomain.cloud/hospital3.jpeg" style="width:800px; height:350px">
+      </div>
+      <div class="gallery">
+        <img src="https://celestial.s3.jp-tok.cloud-object-storage.appdomain.cloud/hospital4.jpg" style="width: 800px; height:350px">
+      </div>
+      <div class="gallery">
+        <img src="https://celestial.s3.jp-tok.cloud-object-storage.appdomain.cloud/hospital5.jpg" style="width: 800px; height:350px">
+      </div>
+
+  </div>
+  
+
+
+    
+</body>
+</html>
