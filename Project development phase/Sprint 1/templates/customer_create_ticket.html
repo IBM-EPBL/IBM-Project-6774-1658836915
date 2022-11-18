@@ -1,0 +1,28 @@
+{% extends 'customer_dashboard.html' %}
+{% block content %}
+	{{ super() }}
+	<section class="section">
+	<p>
+		Please give your query below
+	</p>
+	<div class="forms">
+		<form action="#" method='POST'>
+			<div class="form-control-group">
+				
+				<label for="" class="form-control-label">Query</label>
+				<textarea name="query" class="form-control" rows='5'></textarea>
+
+			</div>
+			<br>
+			<button class="btn btn-primary">Create ticket</button>
+		</form>
+	</div>
+	</section>
+	<style>
+		.section{
+			margin-top: 210px;
+		position: absolute;
+		padding: 20px;
+		}
+	</style>
+{% endblock %}

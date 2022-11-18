@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+	
+
+	
+	<ul class="u1">
+		<li>
+			<a id="a" href="{{ url_for('admin.admin_tickets') }}">Tickets</a>	
+		</li>
+		<li>
+			<a id="a" href="{{ url_for('admin.admin_agents') }}">Agents</a>
+		</li>
+		<li>
+			<a id="a" href="{{ url_for('admin.admin_requests') }}">Requests</a>
+		</li>
+		<li >
+			<a id="a" href="{{ url_for('admin.admin_login') }}">Logout</a>
+		</li>			
+	</ul>
+
+	<style>
+
+		body{
+			margin: 0;
+			padding: 0;
+			font-family: Arial;
+		}
+		.u1{
+			margin-top: 110px;
+			position: absolute;
+		}
+		
+		
+		ul{
+			list-style: none;
+			float: right;
+			margin:0;
+			padding: 0;
+			display: flex;
+	
+		}
+		ul li a{
+			line-height: 80px;
+			color: #fff;
+			padding: 12px 30px;
+			text-decoration: none;
+			font-size: 14px;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		ul li a:hover{
+			background:rgba(0,0,0,0.7);
+			border-radius:6px;
+		}
+		#a{
+			text-decoration: none;
+			color: inherit;
+		}
+		</style>
+
+
+{% endblock %}
+{% block script %}
+
+{% endblock %}
