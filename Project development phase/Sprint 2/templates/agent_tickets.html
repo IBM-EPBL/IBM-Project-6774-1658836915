@@ -1,0 +1,49 @@
+{% extends 'agent_dashboard.html' %}
+{% block content %}
+	{{ super() }}
+<section class="section">
+	<p>Ticktes assigned for you</p>
+	<table class="table table-bordered table-dark tables">
+		<thead>
+			<tr>
+				<th>User</th>
+				<th>Query</th>
+				<th>Date</th>
+				<th>Status</th>
+				<th>Reply</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% if tickets %}
+				{% for ticket in tickets %}
+					<tr>
+						<td>{{ ticket['USER'] }}</td>
+						<td>{{ ticket['QUERY'] }}</td>
+						<td>{{ ticket['DATE'] }}</td>
+						<td>{{ ticket['STATUS'] }}</td>
+						<td><a id='url' href="#" onclick="Flink(this, '{{ ticket['ID'] }}')">click here to send mail</a></td>
+					</tr>
+				{% endfor %}
+			{% endif %}
+		</tbody>
+	</table>
+</section>
+<style>
+	.section{
+		margin-top: 205px;
+    position: absolute;
+	padding: 20px;
+	}
+</style>
+
+{% endblock %}
+{% block script %}
+  	
+  	function Flink(obj, value){
+  	var a = document.getElementById('url');
+  	var b = '/tickets/query/mail?id=' + value;
+  	a.href = b;
+    return false;
+  	}
+ 
+{% endblock %}
