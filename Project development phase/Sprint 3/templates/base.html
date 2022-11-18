@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="../static/bootstrap.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	
+	<nav>
+        <div class="logo">Customer care registry</div>
+	<style>
+	  body{
+        margin: 0;
+        padding: 0;
+        font-family: Arial;
+    }
+    nav{
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100px;
+        padding: 10px 90px;
+        box-sizing: border-box;
+        background: rgba(0,0,0,0.6);
+        border-bottom: 1px solid#fff;
+    }
+    .logo{
+        padding: 22px 20px;
+        height: 80px;
+        float: left;
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color:#fff
+    }
+
+    section{
+        width: 100%;
+        height :100vh;
+        /* background:url(customer4.jpg); */
+        background-size: cover;
+        background-position: center;
+    }	
+	</style>
+
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		{% for msg in messages %}
+			<div class="alert alert-warning alert-dismissible">
+				<button class="btn btn-close" data-bs-dismiss='alert'></button>
+				{{ msg }}
+			</div>
+
+		{% endfor %}
+	{% endif %}
+	{% endwith %}
+
+
+	{% block content %}
+	{% endblock %}
+
+
+</body>
+
+<script type="text/javascript">
+{% block script %}
+{% endblock %}
+</script>
+<script type="text/javascript" src='../static/bootstrap.js'></script>
+<script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "bc40fb8b-26e4-409c-8bca-39e6370fe279", // The ID of this integration.
+      region: "au-syd", // The region your integration is hosted in.
+      serviceInstanceID: "6b04f968-4d87-4c65-be32-9113dcf35fcf", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+</html>

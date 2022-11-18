@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">Customer care registry</div>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="{{ url_for('customer.customer_login') }}">Customer login</a></li>
+                <li><a href="{{ url_for('agent.agent_login') }}">Agent login</a></li>
+                <li ><a href="{{ url_for('admin.admin_login') }}">Admin</a></li>
+            </ul>    
+    </nav>
+    <section  style=" background:url({{ url_for('static', filename='customer.jpg') }});">
+       
+    </section>
+    
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        font-family: Arial;
+    }
+    nav{
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100px;
+        padding: 10px 90px;
+        box-sizing: border-box;
+        background: rgba(0,0,0,0.6);
+        border-bottom: 1px solid#fff;
+    }
+    .logo{
+        padding: 22px 20px;
+        height: 80px;
+        float: left;
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color:#fff
+    }
+    nav ul{
+        list-style: none;
+        float: right;
+        margin:0;
+        padding: 0;
+        display: flex;
+
+    }
+    nav ul li a{
+        line-height: 80px;
+        color: #fff;
+        padding: 12px 30px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    nav ul li a:hover{
+        background:rgba(0,0,0,0.7);
+        border-radius:6px;
+    }
+    section{
+        width: 100%;
+        height :100vh;
+        /* background:url(customer4.jpg); */
+        background-size: cover;
+        background-position: center;
+    }
+    
+</style>
+<script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "bc40fb8b-26e4-409c-8bca-39e6370fe279", // The ID of this integration.
+      region: "au-syd", // The region your integration is hosted in.
+      serviceInstanceID: "6b04f968-4d87-4c65-be32-9113dcf35fcf", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+</body>
+</html>

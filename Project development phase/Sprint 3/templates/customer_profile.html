@@ -1,0 +1,34 @@
+{% extends 'customer_dashboard.html' %}
+
+{% block content %}
+	{{ super() }}
+<section class="section">
+	<table class="table table-bordered table-dark table-hover tables" >
+		
+		<tr>
+			<th>Name</th>
+			<td>{{ user['NAME'] }}</td>
+		</tr>
+		<tr>
+			<th>Email</th>
+			<td>{{ user['EMAIL'] }}</td>
+		</tr>
+		<tr>
+			<th>Role</th>
+			<td>{{ user['ROLE'] }}</td>
+		</tr>
+		<tr>
+			<th>ID</th>
+			<td>{{ user['ID'] }}</td>
+		</tr>
+	</table>
+</section>
+<style>
+	.section{
+		margin-top: 210px;
+    position: absolute;
+	padding: 20px;
+	}
+</style>
+	
+{% endblock %}

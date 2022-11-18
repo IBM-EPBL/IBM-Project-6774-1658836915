@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="container">
+	<form action="#" method="POST">
+
+		<input type="text" name=id value="{{ ticket['ID'] }}" hidden>
+		
+		<label for="to"><b>To: </b>{{ ticket['USER'] }}</label><br><br><br>
+		<input type="text" value="{{ ticket['USER'] }}" name="to" id="to" hidden>	
+		
+		<label for="qn"><b>To: </b>{{ ticket['QUERY'] }}</label><br><br><br>
+		<input type="text" value="{{ ticket['QUERY'] }}" name="qn" id="qn"hidden>	
+		
+		<label for=""><b>Solution</b></label>
+		<textarea name="reply" id="reply" cols="30" rows="5"></textarea><br><br><br>
+
+		<button id="send">Send</button>
+
+	</form>
+</div>
+
+<style>
+	.container{
+		margin-left: -2%;
+    margin-top: 4%;
+    background-color: #645a000f;
+    /* padding: 47px; */
+    text-align: center;
+    font-size: 22px;
+	}
+	#send{
+		padding: 2px;
+		text-align: center;
+		border-radius: 4px;
+	}
+</style>
+
+
+{% endblock %}
