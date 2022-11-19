@@ -1,0 +1,1 @@
+DOCKER PULL COMMAND : docker pull ritchard/helloworld

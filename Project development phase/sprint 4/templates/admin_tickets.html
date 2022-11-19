@@ -1,0 +1,67 @@
+{% extends 'admin_dashboard.html' %}
+{% block content %}
+	{{ super() }}
+	<section class="section1">
+	<p><b>Ticktes unassigned</b></p>
+	<table class="table table-bordered table-dark tables">
+		<thead>
+			<tr>
+				<th>User</th>
+				<th>Query</th>
+				<th>Date</th>
+				<th>ID</th>
+				<th>Agent</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% if tickets %}
+				{% for ticket in tickets %}
+					<tr>
+						<td>{{ ticket['USER'] }}</td>
+						<td>{{ ticket['QUERY'] }}</td>
+						<td>{{ ticket['DATE'] }}</td>
+						<td >{{ ticket['ID'] }}</td>
+						<td>
+							<select id="selection" onchange="selected( '{{ ticket['ID'] }}' , this.value )" onfocus="this.selectedIndex = -1" >
+								{% if agents %}
+									{% for agent in agents %}
+										<option value="{{ agent['ID'] }}">	{{ agent['ID'] }}
+										</option>
+									{% endfor %}
+								{% endif %}
+							</select>
+						</td>
+					</tr>
+				{% endfor %}
+			{% endif %}
+		</tbody>
+	</table><br>
+</section>
+
+
+<style>
+	.section1{
+		margin-top: 205px;
+    position: absolute;
+	padding: 20px;
+	}
+</style>			
+{% endblock %}
+
+{% block script %}
+	
+	//var temp = document.getElementById('selection').value;
+	//var temp1 = temp.split(" ");
+	function selected(a,b){
+	//	var url = '/admin/assign/' + temp1[1] + '/' + temp1[0];
+		var url = '/admin/assign/' + a + '/' + b;
+		console.log(url);
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', url, true);
+		xhr.onload = function(){
+		console.log(this.status);
+	}
+		xhr.send()
+	}	
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'customer_dashboard.html' %}
+{% block content %}
+	{{ super() }}
+<section class="section">
+	<p>Ticktes created by you</p>
+	<table class="table table-bordered table-dark tables">
+		<thead>
+			<tr>
+				<th>Agent</th>
+				<th>Query</th>
+				<th>Date</th>
+				<th>Status</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			{% if tickets %}
+				{% for ticket in tickets %}
+					<tr>
+						<td>{{ ticket['AGENT'] }}</td>
+						<td>{{ ticket['QUERY'] }}</td>
+						<td>{{ ticket['DATE'] }}</td>
+						<td>{{ ticket['STATUS'] }}</td>
+						
+					</tr>
+				{% endfor %}
+			{% endif %}
+		</tbody>
+	</table>
+</section>
+<style>
+	.section{
+		margin-top: 205px;
+    position: absolute;
+	padding: 20px;
+	}
+</style>			
+{% endblock %}
