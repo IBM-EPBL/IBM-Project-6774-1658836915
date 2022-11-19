@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<a id="login">Login</a>
+	<div class="container1">
+		
+	<div class="forms">
+	
+		<form action="#" method="POST">
+
+			<div class="form-group">
+				<input type="text" name="email" placeholder="Email" class="form-control">
+			</div>
+<br>
+			<div class="form-group">
+				<input type="text" name="password" placeholder="Password" class="form-control">
+			</div>
+<br>
+			<button class="btn btn-primary">Submit</button>
+		
+		</form>
+		<br>
+		<div>
+			<p>Don't have an account.<strong><a style="text-decoration: none;" href="{{ url_for('customer.customer_signin') }}"> Signin  </a></strong></p>
+		</div>
+	
+	</div>
+</div>
+	<style>
+		.container1{
+			position: absolute;
+			padding: 50px;
+			margin-left: 40%;
+			margin-right: 40px;
+			margin-top: 223px;
+			background-color: rgb(105, 173, 150);
+			border-radius: 20px;
+		}
+		#login{  
+			margin-left: 49%;
+			font-size: 30px;
+			position: absolute;
+			margin-top: 163px;
+				}
+	</style>
+{% endblock %}

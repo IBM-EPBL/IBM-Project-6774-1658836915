@@ -1,0 +1,55 @@
+{% extends 'admin_dashboard.html' %}
+{% block content %}
+	{{ super() }}
+	<section class="section">
+	<p>Pending requests</p>
+	<table class="table table-bordered tables">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>ID</th>
+				<th>Approve</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% if agents %}
+				{% for agent in agents %}
+					<tr>
+						<td>{{ agent['NAME'] }}</td>
+						<td>{{ agent['EMAIL'] }}</td>
+						<td>{{ agent['ID'] }}</td>
+						<td>
+							<button class="btn btn-small" onclick="clicked( '{{ agent['ID'] }} yes' )">Yes
+							</button><br>
+							<button class="btn btn-small" onclick="clicked( '{{ agent['ID'] }} no' )">No
+							</button>
+						</td>
+					</tr>
+				{% endfor %}
+			{% endif %}
+		</tbody>
+	</table>
+	<br>
+</section>
+<style>
+	.section{
+		margin-top: 205px;
+    position: absolute;
+	padding: 20px;
+	}
+</style>
+{% endblock %}
+{% block script %}
+	function clicked(approve_answer){
+		var temp = approve_answer.split(' ');
+		var url = '/admin/approve/'+ temp[1] + '/' + temp[0];
+		console.log(url);
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET',url,true);
+		xhr.onload = function(){
+		console.log(this.status);
+		}
+		xhr.send()
+	}
+{% endblock %}

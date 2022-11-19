@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="forms">
+	
+		<form action="#" method="POST" style="width: 50%;height: 50%;">
+
+			<div class="form-group">
+				<label class="form-label">Name</label>
+				<input type="text" name="name" placeholder="Name" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<label class="form-label">Email</label>
+				<input type="text" name="email" placeholder="Email" class="form-control">
+				<small class="text-danger">*this mail will be used to login</small>
+			</div>
+			
+			<div class="form-group">
+				<label class="form-label">Password</label>
+				<input type="text" name="password" placeholder="Password" class="form-control">
+				<small class="text-danger">*password should be 4-50 in length, use an uppercase
+				,use numbers and special characters</small>
+			</div>
+
+			<div class="form-group">
+				<label class="form-label">Confirm password</label>
+				<input type="text" name="confirm_password" placeholder="Confirm Password" class="form-control ">
+			</div>
+
+			<button class="btn btn-primary">Submit</button>
+
+		</form>
+		
+		<div>
+			<p>Already have an account.<strong><a href="{{ url_for('agent.agent_login') }}"> Login in </a></strong></p>
+		</div>
+		
+	</div>
+
+{% endblock %}

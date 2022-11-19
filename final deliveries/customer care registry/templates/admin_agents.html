@@ -1,0 +1,36 @@
+{% extends 'admin_dashboard.html' %}
+{% block content %}
+	{{ super() }}
+	<section class="section">
+	<p>Approved agents</p>
+	<table class="table table-bordered table-dark tables">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>ID</th>
+				<th>Approved</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% if agents %}
+				{% for agent in agents %}
+					<tr>
+						<td>{{ agent['NAME'] }}</td>
+						<td>{{ agent['EMAIL'] }}</td>
+						<td>{{ agent['ID'] }}</td>
+						<td>{{ agent['APPROVED'] }}</td>
+					</tr>
+				{% endfor %}
+			{% endif %}
+		</tbody>
+	</table>
+</section>
+<style>
+	.section{
+		margin-top: 205px;
+    position: absolute;
+	padding: 20px;
+	}
+</style>
+{% endblock %}

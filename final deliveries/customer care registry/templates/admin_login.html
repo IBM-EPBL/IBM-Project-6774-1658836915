@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+	<a id="login"> Admin Login</a>
+	<div class="container2">
+	    <div class="forms">
+	
+			<form action="#" method="POST">
+
+				<div class="form-group">
+					<input type="text" name="email" placeholder="Email" class="form-control">
+				</div>
+                <br>
+				<div class="form-group">
+					<input type="text" name="password" placeholder="Password" class="form-control">
+				</div>
+                <br>
+				<button class="btn btn-primary">Submit</button>
+			
+			</form>
+			
+	    </div>
+</div>
+<style>
+.container2{
+			position: absolute;
+			padding: 50px;
+			margin-left: 40%;
+			margin-right: 40px;
+			margin-top: 223px;
+			background-color: rgb(105, 173, 150);
+			border-radius: 20px;
+		}
+		#login{  
+			margin-left: 46%;
+			font-size: 30px;
+			position: absolute;
+			margin-top: 163px;
+				}
+</style>
+{% endblock %}
